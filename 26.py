@@ -18,13 +18,17 @@ Output: 2, nums = [1,2,_]
 Не имеет значения, что вы оставляете за пределами возвращаемого k (следовательно, это символы подчеркивания).
 """
 
-nums = [1, 1, 2]
+nums = [1, 1, 2, 2, 2]
 
 
 class Solution:
     def removeDuplicates(self, nums: list[int]) -> int:
+        long_all = len(nums)
         nums[:] = sorted(set(nums))
-        return nums
+        # long_nums = len(nums)
+        # total_l = long_all - long_nums
+        # nums.extend(nums[-1] * total_l)
+        return len(nums)
 sol = Solution()
 
 print(sol.removeDuplicates(nums))
