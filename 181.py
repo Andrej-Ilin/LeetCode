@@ -13,7 +13,7 @@ def find_employees(employee: pd.DataFrame) -> pd.DataFrame:
     emp = employee.merge(employee, how='inner',  left_on='managerId', right_on='id')
     emp_earn = emp[emp.salary_x > emp.salary_y].name_x
 
-    return pd.DataFrame({"Employee" : emp_earn})  # employee["id"] == employee["managerId"],
+    return pd.DataFrame({"Employee": emp_earn})  # employee["id"] == employee["managerId"],
 
 
 print(find_employees(employee))

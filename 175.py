@@ -2,6 +2,7 @@
 https://leetcode.com/problems/combine-two-tables/description/?lang=pythondata
 """
 import pandas as pd
+
 data = [[1, 'Wang', 'Allen'], [2, 'Alice', 'Bob']]
 person = pd.DataFrame(data, columns=['personId', 'firstName', 'lastName']).astype(
     {'personId': 'Int64', 'firstName': 'object', 'lastName': 'object'})
@@ -13,4 +14,6 @@ address = pd.DataFrame(data, columns=['addressId', 'personId', 'city', 'state'])
 def combine_two_tables(person: pd.DataFrame, address: pd.DataFrame) -> pd.DataFrame:
     result = pd.merge(person, address, on="personId", how='left')
     return result[['firstName', 'lastName', 'city', 'state']]
+
+
 print(combine_two_tables(person, address))

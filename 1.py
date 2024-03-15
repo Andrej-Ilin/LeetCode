@@ -37,4 +37,3 @@ target = 9
 
 sol = Solution()
 print(sol.twoSum(nums, target))
-

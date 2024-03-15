@@ -29,6 +29,8 @@ class Solution:
         # total_l = long_all - long_nums
         # nums.extend(nums[-1] * total_l)
         return len(nums)
+
+
 sol = Solution()
 
 print(sol.removeDuplicates(nums))
