@@ -10,15 +10,16 @@ Input: nums1 = [1,3], nums2 = [2]
 Output: 2.00000
 Explanation: merged array = [1,2,3] and median is 2."""
 
+
 class Solution:
     def findMedianSortedArrays(self, nums1: list[int], nums2: list[int]) -> float:
-        nums = sorted(nums1+nums2)
+        nums = sorted(nums1 + nums2)
         sz = len(nums)
         if sz % 2:
-            return nums[sz//2]
+            return nums[sz // 2]
         else:
-            return (nums[sz//2] + nums[sz//2-1])/2
+            return (nums[sz // 2] + nums[sz // 2 - 1]) / 2
 
 
 sol = Solution()
-print(sol.findMedianSortedArrays(nums1 = [1,3], nums2 = [2,4]))
+print(sol.findMedianSortedArrays(nums1=[1, 3], nums2=[2, 4]))
