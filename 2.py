@@ -11,8 +11,18 @@ l1 = [9, 9, 9, 9, 9, 9, 9]
 l2 = [9, 9, 9, 9]
 
 
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
 class Solution:
-    def addTwoNumbers(self, l1, l2) -> list:
+    def reverse_list(head, tail=None):
+        while head:
+            head.next, tail, head = tail, head, head.next
+        return tail
+    def addTwoNumbers(self, l1: [ListNode], l2: [ListNode]) -> [ListNode]:
         l1_r = l1[::-1]
         l2_r = l2[::-1]
         summ = int("".join(map(str, l1_r))) + int("".join(map(str, l2_r)))
@@ -21,4 +31,4 @@ class Solution:
 
 
 sol = Solution()
-sol.addTwoNumbers(l1, l2)
+print(sol.addTwoNumbers(l1, l2))
