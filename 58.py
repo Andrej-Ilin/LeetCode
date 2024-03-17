@@ -15,11 +15,10 @@ Explanation: The last word is "World" with length 5."""
 
 class Solution:
     def lengthOfLastWord(self, s: str) -> int:
-        new_str = '\n'.join(el.strip() for el in s.split('\n') if el.strip())
-        return len(list(new_str.split(" ")[-1]))
+        return len(s.split()[-1])
 
 
 sol = Solution()
 
-print(sol.lengthOfLastWord(s="Hello World"))
+print(sol.lengthOfLastWord(s="   fly me   to   the moon  "))
 
