@@ -1,6 +1,6 @@
-"""You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the
-integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.
-Increment the large integer by one and return the resulting array of digits.
+"""You are given a large integer represented as an integer array digi
+integer. The digits are ordered from most significant to least signif
+Increment the large integer by one and return the resulting array of
 
 Example 1:
 
@@ -18,13 +18,18 @@ Expected
 
 class Solution:
     def plusOne(self, digits: list[int]) -> list[int]:
-        num = digits.pop(-1) + 1
-        nums = list(map(int, str(num)))
-        for inner_item in (nums):
-            digits.append(inner_item)
-        # nums = list((str(num)))
+        carry = 1
+        for i in range(len(digits) - 1, -1, -1):
+            digits[i] += carry
+            carry = digits[i] // 10
+            digits[i] %= 10
+
+        if carry:
+            digits.insert(0, carry)
+
         return digits
 
-
 sol = Solution()
-print(sol.plusOne(digits=[9, 9]))
+print(sol.plusOne(digits=[1, 2, 3]))
+print(sol.plusOne(digits=[4, 3, 2, 1]))
+print(sol.plusOne(digits=[9, 9]))  # out [1,0,0]
