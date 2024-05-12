@@ -13,7 +13,9 @@ Output: "10101"
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
         # print(int(a, 2))
-        summ =format(int(a, 2) + int(b, 2), 'b')
+        summ = format(int(a, 2) + int(b, 2), 'b')
         return summ
+
+
 sol = Solution()
-print(sol.addBinary("11", "1")) #"100"
+print(sol.addBinary("11", "1"))  # "100"
